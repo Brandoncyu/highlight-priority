@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { Button, Form, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      text: ''
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container>
+        <Row className="my-4">
+          <h1>This is my test for Textio!</h1>
+        </Row>
+        <Row>
+          <Col>
+            <Form>
+              <Label htmlFor="user-text">Text</Label>
+              <Input
+                type="text"
+                name="user-text"
+                id="user-text"
+                placeholder="Type In Your Text Here"
+                value={this.state.text}
+                onChange={e => this.setState({text: e.target.value})} />
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
