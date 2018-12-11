@@ -8,13 +8,13 @@ class Highlights extends Component {
     this.state = {
       startOffset: '',
       endOffset: '',
-      background: '',
+      color: '',
       priority: ''
     }
   }
 
   handleChangeComplete = (color) => {
-    this.setState({ background: color.hex });
+    this.setState({ color: color.hex });
   };
 
   render() {
@@ -49,8 +49,9 @@ class Highlights extends Component {
             <Label>Color</Label>
             <CirclePicker
               id="user-color"
-              color={ this.state.background }
+              color={ this.state.color }
               onChangeComplete={ this.handleChangeComplete }
+              circleSpacing={20}
             />
           </Col>
 

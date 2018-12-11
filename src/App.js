@@ -12,6 +12,21 @@ class App extends Component {
     }
   }
 
+  addHighlights = () => {
+    let highlightRules = {
+      startOffset: '',
+      endOffset: '',
+      color: '',
+      priority: ''
+    }
+
+
+    this.setState({
+      highlights: this.state.highlights.concat(highlightRules),
+    })
+    console.log(this.state)
+  }
+
   render() {
     return (
       <Container>
@@ -20,6 +35,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
+            <h3>Input</h3>
             <Form>
               <Label htmlFor="user-text">Text</Label>
               <Input
@@ -29,10 +45,15 @@ class App extends Component {
                 placeholder="Type In Your Text Here"
                 value={this.state.text}
                 onChange={e => this.setState({text: e.target.value})} />
-              <Highlights />
+              <br />
+              <Button color="secondary" onClick={this.addHighlights}>Add Highlight to Text</Button>
+              {this.state.highlights.map((highlight, index)=>
+                 <Highlights />
+              )}
             </Form>
           </Col>
         </Row>
+
       </Container>
     );
   }
