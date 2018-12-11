@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { Button, Form, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import Highlights from './components/highlights'
 import './App.css';
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      text: ''
+      text: '',
+      highlights: []
     }
   }
 
@@ -28,6 +29,7 @@ class App extends Component {
                 placeholder="Type In Your Text Here"
                 value={this.state.text}
                 onChange={e => this.setState({text: e.target.value})} />
+              <Highlights />
             </Form>
           </Col>
         </Row>
