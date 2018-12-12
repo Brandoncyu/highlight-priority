@@ -49,6 +49,13 @@ class App extends Component {
     })
   }
 
+  clear = () =>{
+    this.setState({
+      text: '',
+      highlights: []
+    })
+  }
+
   render() {
     return (
       <Container>
@@ -70,7 +77,8 @@ class App extends Component {
                 onChange={e => this.setState({text: e.target.value})} />
               <br />
               <Button color="primary" onClick={this.submit}>Render Your Text</Button>{' '}
-              <Button color="secondary" onClick={this.addHighlights}>Add Highlights to Text</Button>
+              <Button color="warning" onClick={this.addHighlights}>Add Highlights to Text</Button>{' '}
+              <Button color="danger" onClick={this.clear}>Clear Text</Button>
               {this.state.highlights.map((highlight, index)=>
                  <Highlights
                   key={index}
@@ -79,6 +87,7 @@ class App extends Component {
                   edit={this.editHighlights}
                  />
               )}
+
             </Form>
           </Col>
         </Row>
