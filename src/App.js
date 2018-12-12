@@ -20,10 +20,26 @@ class App extends Component {
       priority: ''
     }
 
-
     this.setState({
       highlights: this.state.highlights.concat(highlightRules),
     })
+  }
+
+  editHighlights = (index, obj) => {
+    let highlightArray = this.state.highlights
+    let newHighlight = {
+      ...highlightArray[index],
+      ...obj
+    }
+
+    let highlights = [...highlightArray.slice(0, index), newHighlight, ...highlightArray.slice(index + 1)]
+
+    this.setState({
+      highlights
+    })
+  }
+
+  submit = () =>{
     console.log(this.state)
   }
 
@@ -46,9 +62,15 @@ class App extends Component {
                 value={this.state.text}
                 onChange={e => this.setState({text: e.target.value})} />
               <br />
-              <Button color="secondary" onClick={this.addHighlights}>Add Highlight to Text</Button>
+              <Button color="primary" onClick={this.submit}>Render Your Text</Button>{' '}
+              <Button color="secondary" onClick={this.addHighlights}>Add Highlights to Text</Button>
               {this.state.highlights.map((highlight, index)=>
-                 <Highlights />
+                 <Highlights
+                  key={index}
+                  index={index}
+                  highlight={highlight}
+                  edit={this.editHighlights}
+                 />
               )}
             </Form>
           </Col>
