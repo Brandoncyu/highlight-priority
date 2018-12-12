@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { CirclePicker } from 'react-color';
-import { Button, Form, Label, Input, FormGroup, Container, Row, Col } from 'reactstrap';
+import { Label, Input, FormGroup, Row, Col } from 'reactstrap';
 
 const Highlights = (props) => {
 
@@ -9,7 +9,6 @@ const Highlights = (props) => {
   };
 
   const edit = (e) =>{
-
     let value = Number(e.target.value)
     props.edit(props.index, { [e.target.name]: value });
   }
@@ -40,7 +39,6 @@ const Highlights = (props) => {
               value={props.highlight.priority}
               onChange={edit} />
         </Col>
-
         <Col>
           <Label>Color</Label>
           <CirclePicker
@@ -50,7 +48,6 @@ const Highlights = (props) => {
             circleSpacing={20}
           />
         </Col>
-
       </Row>
     </FormGroup>
   );

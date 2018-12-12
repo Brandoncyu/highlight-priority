@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import { Button, Form, Label, Input, Container, Row, Col } from 'reactstrap';
+import Display from './components/display'
 import Highlights from './components/highlights'
 import './App.css';
 
@@ -8,7 +9,9 @@ class App extends Component {
     super(props)
     this.state = {
       text: '',
-      highlights: []
+      highlights: [],
+      displayText: '',
+      displayHighlights: [],
     }
   }
 
@@ -40,22 +43,26 @@ class App extends Component {
   }
 
   submit = () =>{
-    console.log(this.state)
+    this.setState({
+      displayText: this.state.text,
+      displayHighlights: this.state.highlights,
+    })
   }
 
   render() {
     return (
       <Container>
-        <Row className="my-4">
-          <h1>This is my test for Textio!</h1>
-        </Row>
+        <Display
+          text={this.state.displayText}
+          highlights={this.state.displayHighlights}
+        />
         <Row>
           <Col>
             <h3>Input</h3>
             <Form>
               <Label htmlFor="user-text">Text</Label>
               <Input
-                type="text"
+                type="textarea"
                 name="user-text"
                 id="user-text"
                 placeholder="Type In Your Text Here"
@@ -75,7 +82,6 @@ class App extends Component {
             </Form>
           </Col>
         </Row>
-
       </Container>
     );
   }
