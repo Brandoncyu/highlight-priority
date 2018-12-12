@@ -3,7 +3,6 @@ import { CirclePicker } from 'react-color';
 import { Label, Input, FormGroup, Row, Col } from 'reactstrap';
 
 const Highlights = (props) => {
-
   const handleChangeComplete = (color) => {
     props.edit(props.index, { color: color.hex });
   };
