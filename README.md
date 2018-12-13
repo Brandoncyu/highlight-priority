@@ -26,9 +26,9 @@ run npm start
 
 This application requires two inputs: **text** that will be manipulated and **highlight values** that will control the manipulation.
 
-The **text** can be input in the text box on the left.
+The **text** can be input in the text box on the top left of your screen.
 
-To add **highlight values**, click the yellow button labeled "Add Highlights to Text." A form group will be rendered below. You can add as many as you'd like; add more by pressing the button again.
+To add **highlight values**, click the yellow button below the text box labeled "Add Highlights to Text." A form group will be rendered below. You can add as many as you'd like; add more by pressing the button again.
 
 Within each form group, type in a number in the "Start Offset" box for which word you'd like the highlights to begin, and a number in the "End Offset" box for the word which you'd like the highlights to end.
 
