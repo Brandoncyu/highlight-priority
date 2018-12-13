@@ -1,45 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Textio Take Home Challenge
 
-## Available Scripts
+For my application for the Front-End Engineer at Textio, I was tasked with creating a web service that will highlight phrases in a document given a string and an array of highlight objects. If highlights overlap, it will show the higher-priority highlights over the lower-priority highlights.
 
-In the project directory, you can run:
+**[A further description of the coding challenge can be found here](./Short-Take-Home-Textio-Application-Engineering.pdf)**.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+What things you need to install the software.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* fork and clone this repository
 
-### `npm run build`
+### Installing
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install the Node dependencies:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```shell
+run npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Key Features
 
-### `npm run eject`
+This application requires two inputs: **text** that will be manipulated and **highlight values** that will control the manipulation.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The **text** can be input in the text box on the left.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To add **highlight values**, click the yellow button labeled "Add Highlights to Text." A form group will be rendered below. You can add as many as you'd like; add more by pressing the button again.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Within each form group, type in a number in the "Start Offset" box for which word you'd like the highlights to begin, and a number in the "End Offset" box for the word which you'd like the highlights to end.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You will also need to type in a number in the "Priority" box to determine the order in which the highlights will be prioritized. **The priorities will be determined by ascending order.** For example, the highlight value with a priority value of '0' will have a higher priority with a higlight value with a priority of '1'. You can determine your highlight color by clicking the colored circle of your choosing in the color swatch on the right of the box.
 
-## Learn More
+Please note that you **must** have the "Start Offset", "End Offset", and "Priority" boxes filled in order for each highlight value to be rendered. The "Start Offset" value must also be less than or equal to the "End Offset" value. **Any highlight values that do not fit the above criteria will not be considered.**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To render your text, click the blue button labeled "Render Your Text". The text will then be rendered with the highlight values on the right side of your screen. To clear the text and the highlights on the form on the left, click the red button labeled "Clear Text/Highlights".
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# textio-take-home
+## Built With
+
+* [JavaScript](https://www.javascript.com/) - The language
+* [Bootstrap](https://bootstrap.com/) - The css framework used
+* [React](https://reactjs.org/) - Frontend library
+* [Node](https://nodejs.org/en/) - Package ecosystem
+* [React Color](https://casesandberg.github.io/react-color/) - A package that creates color-picking packages in React
+
+## Author
+
+* **Brandon Yu** - *Initial work* - [Brandoncyu](https://github.com/Brandoncyu)

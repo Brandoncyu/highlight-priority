@@ -24,22 +24,22 @@ const Highlights = (props) => {
             value={props.highlight.startOffset}
             onChange={edit}
             required={true} />
-            <Label htmlFor="user-text">End Offset</Label>
-            <Input
-              type="number"
-              name="endOffset"
-              id="user-endOffset"
-              value={props.highlight.endOffset}
-              onChange={edit}
-              required={true} />
-            <Label htmlFor="user-text">Priority</Label>
-            <Input
-              type="number"
-              name="priority"
-              id="highlight-priority"
-              value={props.highlight.priority}
-              onChange={edit}
-              required={true} />
+          <Label htmlFor="user-text">End Offset</Label>
+          <Input
+            type="number"
+            name="endOffset"
+            id="user-endOffset"
+            value={props.highlight.endOffset}
+            onChange={edit}
+            required={true} />
+          <Label htmlFor="user-text">Priority</Label>
+          <Input
+            type="number"
+            name="priority"
+            id="highlight-priority"
+            value={props.highlight.priority}
+            onChange={edit}
+            required={true} />
         </Col>
         <Col>
           <Label>Color</Label>
