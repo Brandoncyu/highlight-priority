@@ -16,7 +16,7 @@ const Highlights = (props) => {
     <FormGroup className="highlight">
       <Row className = "my-4 mx-4">
         <Col xl="4">
-          <Label htmlFor="user-text">Start Of Set</Label>
+          <Label htmlFor="user-text">Start Offset</Label>
           <Input
             type="number"
             name="startOffset"
@@ -24,7 +24,7 @@ const Highlights = (props) => {
             value={props.highlight.startOffset}
             onChange={edit}
             required={true} />
-            <Label htmlFor="user-text">End Of Set</Label>
+            <Label htmlFor="user-text">End Offset</Label>
             <Input
               type="number"
               name="endOffset"

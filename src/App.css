@@ -22,3 +22,7 @@
 #footer {
   height: 50px
 }
+
+#user-text {
+  white-space: pre-wrap;
+}

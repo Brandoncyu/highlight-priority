@@ -44,14 +44,14 @@ class App extends Component {
     })
   }
 
-  submit = () =>{
+  submit = () => {
     this.setState({
       displayText: this.state.text,
       displayHighlights: this.state.highlights,
     })
   }
 
-  clear = () =>{
+  clear = () => {
     this.setState({
       text: '',
       highlights: [],
@@ -80,7 +80,7 @@ class App extends Component {
               <br />
               <Button color="primary" onClick={this.submit}>Render Your Text</Button>{' '}
               <Button color="warning" onClick={this.addHighlights}>Add Highlights to Text</Button>{' '}
-              <Button color="danger" onClick={this.clear}>Clear Text</Button>
+              <Button color="danger" onClick={this.clear}>Clear Text/Highlights</Button>
               {this.state.highlightsOn &&
                 <div id="highlight-holder" className="my-4">
                   {this.state.highlights.map((highlight, index)=>
