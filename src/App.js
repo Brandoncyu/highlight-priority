@@ -12,6 +12,7 @@ class App extends Component {
       highlights: [],
       displayText: '',
       displayHighlights: [],
+      highlightsOn: false
     }
   }
 
@@ -25,6 +26,7 @@ class App extends Component {
 
     this.setState({
       highlights: this.state.highlights.concat(highlightRules),
+      highlightsOn: true
     })
   }
 
@@ -52,7 +54,8 @@ class App extends Component {
   clear = () =>{
     this.setState({
       text: '',
-      highlights: []
+      highlights: [],
+      highlightsOn: false
     })
   }
 
@@ -79,14 +82,19 @@ class App extends Component {
               <Button color="primary" onClick={this.submit}>Render Your Text</Button>{' '}
               <Button color="warning" onClick={this.addHighlights}>Add Highlights to Text</Button>{' '}
               <Button color="danger" onClick={this.clear}>Clear Text</Button>
-              {this.state.highlights.map((highlight, index)=>
-                 <Highlights
-                  key={index}
-                  index={index}
-                  highlight={highlight}
-                  edit={this.editHighlights}
-                 />
-              )}
+              {this.state.highlightsOn &&
+                <div id="highlight-holder">
+                  {this.state.highlights.map((highlight, index)=>
+                   <Highlights
+                    key={index}
+                    index={index}
+                    highlight={highlight}
+                    edit={this.editHighlights}
+                   />
+                 )}
+               </div>
+              }
+
 
             </Form>
           </Col>

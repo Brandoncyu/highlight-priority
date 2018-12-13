@@ -8,3 +8,12 @@
   background-color: azure;
   overflow-y: scroll;
 }
+
+#highlight-holder {
+  height: 260px;
+}
+
+.highlight {
+  height: 260px;
+  width: 800px
+}
