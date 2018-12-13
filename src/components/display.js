@@ -5,11 +5,12 @@ import DisplayText from './display/displayText'
 const Display = (props) => {
   let highlights = props.highlights.filter(highlight =>
     highlight.startOffSet !== '' && highlight.endOffSet !== '' && highlight.priority !== '' && highlight.startOffset <= highlight.endOffset).sort((a,b) => a.priority - b.priority)
-  let text = props.text.split('\n')
-  .map(text => {
+
+  let text = props.text.split('\n').map(text => {
     text = text.trim() + ' &&&&&space'
     return text.trim()
   }).join(' ').split(' ')
+
   while (text[text.length - 1] === '&&&&&space'){
     text = text.slice(0, -1)
   }
@@ -31,11 +32,13 @@ const Display = (props) => {
           j = highlights.length
         }
       }
+
       accumulator.string = text[i]
       accumulator.space = false
     }
     highVals.push(accumulator)
   }
+
 
   let condHighVals = []
   if (highVals.length > 0){
@@ -52,19 +55,20 @@ const Display = (props) => {
         }
         holder = highVals[i]
         string = highVals[i].string
-        i++
+      } else {
+        if (i < highVals.length && highVals[i].color === holder.color && highVals[i].priority === holder.priority){
+          string = string + ' ' + highVals[i].string
+        } else {
+          let template = Object.assign({}, highVals[i - 1])
+          template.text = string + ' '
+          condHighVals.push(template)
+          holder = highVals[i]
+          string = highVals[i].string
+        }
       }
-      if (highVals[i].color === holder.color && highVals[i].priority === holder.priority){
-        string = string + ' ' + highVals[i].string
-      } else{
-        let template = Object.assign({}, highVals[i - 1])
-        template.text = string + ' '
-        condHighVals.push(template)
-        holder = highVals[i]
-        string = text[i]
-      }
+
     }
-    let finalTemplate = highVals[highVals.length - 1]
+    let finalTemplate = Object.assign({}, highVals[highVals.length - 1])
     finalTemplate.text = string
     condHighVals.push(finalTemplate)
   }
