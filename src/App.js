@@ -62,10 +62,9 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Display
-          text={this.state.displayText}
-          highlights={this.state.displayHighlights}
-        />
+        <Row className="my-4">
+          <h1>This is my test for Textio!</h1>
+        </Row>
         <Row>
           <Col>
             <h3>Input</h3>
@@ -83,7 +82,7 @@ class App extends Component {
               <Button color="warning" onClick={this.addHighlights}>Add Highlights to Text</Button>{' '}
               <Button color="danger" onClick={this.clear}>Clear Text</Button>
               {this.state.highlightsOn &&
-                <div id="highlight-holder">
+                <div id="highlight-holder" className="my-4">
                   {this.state.highlights.map((highlight, index)=>
                    <Highlights
                     key={index}
@@ -94,11 +93,16 @@ class App extends Component {
                  )}
                </div>
               }
-
-
             </Form>
           </Col>
+          <Col>
+            <Display
+              text={this.state.displayText}
+              highlights={this.state.displayHighlights}
+            />
+          </Col>
         </Row>
+        <div id="footer"></div>
       </Container>
     );
   }

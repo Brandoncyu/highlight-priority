@@ -38,21 +38,16 @@ const Display = (props) => {
   reducedHighVals.push(finalTemplate)
 
   return (
-    <div>
-      <Row className="my-4">
-        <h1>This is my test for Textio!</h1>
-      </Row>
-      <Row>
-        <Col>
-          <h3>Display</h3>
-          <p id="display">
+    <Row>
+      <Col>
+        <h3>Display</h3>
+        <p id="display">
           {reducedHighVals.map((highVals, value) =>
             <DisplayText key={value} color={highVals.color} text={highVals.text} />)
           }
-          </p>
-        </Col>
-      </Row>
-    </div>
+        </p>
+      </Col>
+    </Row>
   );
 }
 
