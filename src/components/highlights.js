@@ -7,7 +7,7 @@ const Highlights = (props) => {
     props.edit(props.index, { color: color.hex });
   };
 
-  const edit = (e) =>{
+  const edit = (e) => {
     let value = Number(e.target.value)
     props.edit(props.index, { [e.target.name]: value });
   }

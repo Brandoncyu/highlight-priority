@@ -37,7 +37,11 @@ class App extends Component {
       ...obj
     }
 
-    let highlights = [...highlightArray.slice(0, index), newHighlight, ...highlightArray.slice(index + 1)]
+    let highlights = [
+      ...highlightArray.slice(0, index),
+      newHighlight,
+      ...highlightArray.slice(index + 1)
+    ]
 
     this.setState({
       highlights
