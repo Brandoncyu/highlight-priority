@@ -19,7 +19,13 @@ What things you need to install the software.
 Install the Node dependencies:
 
 ```shell
-run npm start
+* run npm install
+```
+
+Start the react development server:
+
+```shell
+* npm start
 ```
 
 ## Key Features
