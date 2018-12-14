@@ -50,7 +50,7 @@ To render your text, click the blue button labeled "Render Your Text". The text 
 * [Bootstrap](https://bootstrap.com/) - The css framework used
 * [React](https://reactjs.org/) - Frontend library
 * [Node](https://nodejs.org/en/) - Package ecosystem
-* [React Color](https://casesandberg.github.io/react-color/) - A package that creates color-picking packages in React
+* [React Color](https://casesandberg.github.io/react-color/) - A package that creates color-picking components in React
 
 ## Author
 
