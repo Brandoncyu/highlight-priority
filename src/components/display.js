@@ -4,7 +4,8 @@ import DisplayText from './display/displayText'
 
 const Display = (props) => {
   let highlights = props.highlights.filter(highlight =>
-    highlight.startOffSet !== '' && highlight.endOffSet !== '' && highlight.priority !== '' && highlight.startOffset <= highlight.endOffset).sort((a,b) => a.priority - b.priority)
+    highlight.startOffSet !== '' && highlight.endOffSet !== '' && highlight.priority !== '' && highlight.startOffset <= highlight.endOffset)
+    .sort((a,b) => a.priority - b.priority)
 
   let text = props.text
   .split('\n')
