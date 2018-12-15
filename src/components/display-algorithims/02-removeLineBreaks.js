@@ -1,4 +1,4 @@
-function removeSpaces(text){
+function removeLineBreaks(text){
   //This is to make sure that there are no line breaks at the end of the array.
   while (text[text.length - 1] === '&&&&&space'){
     text.pop()
@@ -10,4 +10,4 @@ function removeSpaces(text){
   return text
 }
 
-export default removeSpaces
+export default removeLineBreaks
