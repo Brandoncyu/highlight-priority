@@ -1,8 +1,6 @@
-# Textio Take Home Challenge
+# Highlight Priority
 
-For my application for the Front-End Engineer at Textio, I was tasked with creating a web service that will highlight phrases in a document given a string and an array of highlight objects. If highlights overlap, it will show the higher-priority highlights over the lower-priority highlights.
-
-**[A further description of the coding challenge can be found here](./Short-Take-Home-Textio-Application-Engineering.pdf)**.
+I was tasked with creating a web service that will highlight phrases in a document given a string and an array of highlight objects. If highlights overlap, it will show the higher-priority highlights over the lower-priority highlights.
 
 ## Getting Started
 
