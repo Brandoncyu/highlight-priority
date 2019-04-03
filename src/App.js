@@ -67,7 +67,7 @@ class App extends Component {
     return (
       <Container>
         <Row className="my-4">
-          <h1>This is my test for Textio!</h1>
+          <h1>This my Highlight Priority!</h1>
         </Row>
         <Row>
           <Col>
